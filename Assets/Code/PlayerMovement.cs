@@ -3,19 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameMechanics {
-	public class PlayerMovement : MovementBase {
+	public sealed class PlayerMovement : MovementBase {
 
-		//we're reading the player input in Move()
-		//but Move() is never called
-
-		//A) we call Move() somewhere
-		//B) we get input somewhere else
-
-		private void Update() {
-			_direction.x = Input.GetAxisRaw("Horizontal");
-			_direction.y = Input.GetAxisRaw("Vertical");
+		protected override Vector2 GetDirection() {
+			Vector2 direction;
+			direction.x = Input.GetAxisRaw("Horizontal");
+			direction.y = Input.GetAxisRaw("Vertical");
 			
-			Move();
+			return direction;
 		}
 	}
 }
