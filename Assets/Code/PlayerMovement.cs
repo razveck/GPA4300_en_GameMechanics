@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameMechanics {
-	public class PlayerMovement : MovementBase {
+	public sealed class PlayerMovement : MovementBase {
 
 		protected override Vector2 GetDirection() {
 			Vector2 direction;
