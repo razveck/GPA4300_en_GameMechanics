@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace GameMechanics {
-	public class MovementBase : MonoBehaviour {
+	public abstract class MovementBase : MonoBehaviour {
 
 		[SerializeField]
 		private float _speed = 5f;
 
-		[SerializeField]
-		protected Vector2 _direction;
-
 		private void Update() {
-
+			Move();
 		}
 
-		protected virtual void Move() {
-			transform.position += (Vector3)_direction.normalized * _speed * Time.deltaTime;
+		protected abstract Vector2 GetDirection();
+
+		protected void Move() {
+			transform.position += (Vector3)GetDirection().normalized * _speed * Time.deltaTime;
 		}
 	}
 }
