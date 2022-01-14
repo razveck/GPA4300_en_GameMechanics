@@ -10,6 +10,7 @@ namespace GameMechanics {
 
 		private void Update() {
 			Move();
+			
 		}
 
 		protected abstract Vector2 GetDirection();
@@ -17,5 +18,7 @@ namespace GameMechanics {
 		protected void Move() {
 			transform.position += (Vector3)GetDirection().normalized * _speed * Time.deltaTime;
 		}
+
+		
 	}
 }

@@ -5,12 +5,17 @@ using UnityEngine;
 namespace GameMechanics {
 	public sealed class PlayerMovement : MovementBase {
 
+		
+
 		protected override Vector2 GetDirection() {
 			Vector2 direction;
 			direction.x = Input.GetAxisRaw("Horizontal");
 			direction.y = Input.GetAxisRaw("Vertical");
 			
+			
 			return direction;
 		}
+
+		
 	}
 }
