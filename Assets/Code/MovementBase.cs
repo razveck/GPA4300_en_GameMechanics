@@ -8,7 +8,7 @@ namespace GameMechanics {
 		[SerializeField]
 		private float _speed = 5f;
 
-		private void Update() {
+		protected virtual void Update() {
 			Move();
 		}
 
