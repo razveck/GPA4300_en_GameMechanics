@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 namespace GameMechanics {
-	public class PlayerAiming : MonoBehaviour {
+	public class PlayerAttack : MonoBehaviour {
 
 		// Use this for initialization
 		private void Start() {
