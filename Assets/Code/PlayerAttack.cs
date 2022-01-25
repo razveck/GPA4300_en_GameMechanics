@@ -10,6 +10,9 @@ using UnityEngine;
 namespace GameMechanics {
 	public class PlayerAttack : MonoBehaviour {
 
+		[SerializeField]
+		private Weapon _currentWeapon = default;
+
 		// Use this for initialization
 		private void Start() {
 
@@ -27,6 +30,11 @@ namespace GameMechanics {
 			rotation.z = angle;
 
 			transform.rotation = Quaternion.Euler(rotation);
+
+
+			if(Input.GetMouseButtonDown(0)) {
+				_currentWeapon.Shoot();
+			}
 		}
 	}
 }

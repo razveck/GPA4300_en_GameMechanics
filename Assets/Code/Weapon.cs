@@ -2,29 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameMechanics
-{
-    public class Weapon : MonoBehaviour
-    {
-        [SerializeField] private GameObject bulletPrefab;
+namespace GameMechanics {
+	public class Weapon : MonoBehaviour {
+		[SerializeField]
+		private GameObject _bulletPrefab;
 
-        // Use this for initialization
-        void Start()
-        {
-           
-        }
+		[SerializeField]
+		private Transform _spawnPoint;
 
-        // Update is called once per frame
-        void Update()
-        {
-            if(Input.GetMouseButtonDown(0))
-            {
-                Instantiate(bulletPrefab, Vector3.back, Quaternion.Euler(0f, 0f, 0f));
+		// Use this for initialization
+		void Start() {
 
-                Destroy(bulletPrefab, 2f);
+		}
 
+		public void Shoot() {
+			//Quaternions are rotations in the engine
+			//Euler angles (x, y,z in degrees)
 
-            }
-        }
-    }
+			GameObject bullet = Instantiate(_bulletPrefab, _spawnPoint.position, transform.rotation);
+
+			Destroy(bullet, 2f);
+		}
+	}
 }
