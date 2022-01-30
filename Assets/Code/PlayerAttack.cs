@@ -13,9 +13,12 @@ namespace GameMechanics {
 		[SerializeField]
 		private Weapon _currentWeapon = default;
 
+		
+
 		// Use this for initialization
 		private void Start() {
 
+			
 		}
 
 		// Update is called once per frame
@@ -33,6 +36,9 @@ namespace GameMechanics {
 
 
 			if(Input.GetMouseButtonDown(0)) {
+				if (_currentWeapon.IsReloading)
+					return;
+
 				_currentWeapon.Shoot();
 			}
 		}
