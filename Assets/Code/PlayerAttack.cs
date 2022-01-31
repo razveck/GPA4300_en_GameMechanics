@@ -11,13 +11,10 @@ namespace GameMechanics {
 	public class PlayerAttack : MonoBehaviour {
 
 		[SerializeField]
-		private Weapon _currentWeapon = default;
-
-		
+		public Weapon CurrentWeapon = default;
 
 		// Use this for initialization
 		private void Start() {
-
 			
 		}
 
@@ -36,10 +33,10 @@ namespace GameMechanics {
 
 
 			if(Input.GetMouseButtonDown(0)) {
-				if (_currentWeapon.IsReloading)
+				if (CurrentWeapon.IsReloading)
 					return;
 
-				_currentWeapon.Shoot();
+				CurrentWeapon.Shoot();
 			}
 		}
 	}

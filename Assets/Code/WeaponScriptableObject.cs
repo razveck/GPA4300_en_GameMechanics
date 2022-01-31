@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace GameMechanics
 {
-    [CreateAssetMenu(fileName ="New Weapon", menuName = "Weapon")]
-    public class WeaponScriptableObject : ScriptableObject
+	[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
+	public class WeaponScriptableObject : ScriptableObject
     {
         public string weaponName;
 
@@ -16,7 +16,5 @@ namespace GameMechanics
         public float fireRate;
 
         public GameObject weaponSprite;
-
-
     }
 }
