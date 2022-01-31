@@ -14,10 +14,10 @@ namespace GameMechanics {
 		[SerializeField] LayerMask _mask = default;
 
 		[SerializeField] private float detectionRange;
-		private bool playerInDetectionRange = false;
+		public bool playerInDetectionRange = false;
 
 		[SerializeField] private float stoppingRange;
-		private bool playerInStoppingRange = false;
+		protected bool playerInStoppingRange = false;
 
 		// Update is called once per frame
 		private void Update() {

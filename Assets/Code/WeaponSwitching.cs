@@ -11,6 +11,7 @@ namespace GameMechanics {
 
 		public PlayerAttack Player;
 
+
 		// Start is called before the first frame update
 		private void Start() {
 			foreach(Weapon weapon in Weapons) {

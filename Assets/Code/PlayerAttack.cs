@@ -8,36 +8,30 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 namespace GameMechanics {
-	public class PlayerAttack : MonoBehaviour {
+	public class PlayerAttack : AttackBase {
 
-		[SerializeField]
-		public Weapon CurrentWeapon = default;
+        protected override void Update()
+        {
+            Aim();
 
-		// Use this for initialization
-		private void Start() {
-			
-		}
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (CurrentWeapon.IsReloading)
+                    return;
 
-		// Update is called once per frame
-		private void Update() {
-			Vector3 playerScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
+                CurrentWeapon.Shoot();
+            }
+        }
 
-			Vector3 direction = Input.mousePosition - playerScreenPosition;
-
-			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-			Vector3 rotation = transform.rotation.eulerAngles;
-			rotation.z = angle;
-
-			transform.rotation = Quaternion.Euler(rotation);
-
-
-			if(Input.GetMouseButtonDown(0)) {
-				if (CurrentWeapon.IsReloading)
-					return;
-
-				CurrentWeapon.Shoot();
-			}
-		}
 	}
 }
+        
+
+
+           
+
+            
+
+        
+
+       
