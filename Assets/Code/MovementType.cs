@@ -10,8 +10,9 @@ using UnityEngine;
 namespace GameMechanics {
 	public class MovementType : MonoBehaviour {
 
-		public virtual Vector2 CalculateMovement(){
-			return Vector2.zero;
+		public virtual bool CalculateMovement(out Vector2 direction){
+			direction = default;
+			return false;
 		}
 		
 	}

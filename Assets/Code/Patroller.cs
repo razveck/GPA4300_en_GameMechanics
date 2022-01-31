@@ -21,7 +21,7 @@ namespace GameMechanics {
 			time += Time.deltaTime;
 		}
 
-		public override Vector2 CalculateMovement() {
+		public override bool CalculateMovement(out Vector2 direction) {
 			if(time >= InterpolationPeriod) {
 				time -= InterpolationPeriod;
 
@@ -37,7 +37,8 @@ namespace GameMechanics {
 
 			}
 
-			return patrolling;
+			direction = patrolling;
+			return true;
 		}
 
 		//a function called Add

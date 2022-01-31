@@ -10,22 +10,20 @@ namespace GameMechanics {
 		[SerializeField]
 		private List<MovementType> _movementTypes = new List<MovementType>();
 
+
 		protected override void Update() {
 			base.Update();
 		}
 
 
-
 		protected override Vector2 GetDirection() {
-			Vector2 zero = Vector2.zero;
-
 			foreach(MovementType type in _movementTypes){
-				Vector2 result = type.CalculateMovement();
-				if(result != zero)
-					return result;
+				if(type.CalculateMovement(out Vector2 direction)){
+					return direction;
+				}
 			}
 
-			return zero;
+			return Vector2.zero;
 		}
 
 

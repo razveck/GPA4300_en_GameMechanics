@@ -39,15 +39,17 @@ namespace GameMechanics {
 			
 		}
 
-		public override Vector2 CalculateMovement() {
+		public override bool CalculateMovement(out Vector2 direction) {
 			if(playerInStoppingRange) {
-				return Vector2.zero;
+				direction = Vector2.zero;
+				return true;
 			}
 			if(playerInDetectionRange) {
-				return player.position - transform.position;
+				direction = player.position - transform.position;
+				return true;
 			}
 
-			return base.CalculateMovement();
+			return base.CalculateMovement(out direction);
 		}
 	}
 }

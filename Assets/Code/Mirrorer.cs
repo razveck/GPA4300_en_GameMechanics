@@ -16,8 +16,9 @@ namespace GameMechanics.Assets.Code {
 			_direction.y = Input.GetAxisRaw("Vertical");
 		}
 
-		public override Vector2 CalculateMovement() {
-			return _direction;
+		public override bool CalculateMovement(out Vector2 direction) {
+			direction = _direction;
+			return true;
 		}
 	}
 }
