@@ -18,7 +18,7 @@ namespace GameMechanics {
         }
 
 		protected override bool ShouldShoot() {
-			return Input.GetMouseButtonDown(0);
+			return Input.GetMouseButton(0);
 		}
 	}
 }
