@@ -303,6 +303,8 @@ MonoBehaviour:
   _spawnPoint: {fileID: 6327699245980269218}
   _shotDelay: 0.02
   _timeOfLastShot: 0
+  _bulletAmount: 20
+  _angleDeviation: 20
   maxAmmo: 100
   currentAmmo: 0
   reloadTime: 2

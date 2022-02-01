@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04364adaf5042a148988dd25bdb2b0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 3
 --- !u!50 &2145466915267560285
 Rigidbody2D:
   serializedVersion: 4
@@ -215,7 +215,7 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 32768
+    atime1: 63683
     atime2: 65535
     atime3: 0
     atime4: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.1
+      value: 0.5
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -251,4 +251,4 @@ MonoBehaviour:
     m_RotationOrder: 4
   _sprite: {fileID: 784852790160581528}
   _timer: 0
-  _duration: 1
+  _duration: 0.5
