@@ -207,6 +207,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7134025639540486645, guid: f5c1380c00ab0ed44a06fb9f7d2b652c, type: 3}
+      propertyPath: ShootRange
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 505867512442873589, guid: f5c1380c00ab0ed44a06fb9f7d2b652c, type: 3}
       propertyPath: m_Name
       value: Chaser
@@ -356,6 +360,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac45391bb6e7ae1418c3d5ad6346cc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1429825200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2796148798054830184, guid: 5f0fffe0e31dd294ebdf562f6a75436e, type: 3}
+  m_PrefabInstance: {fileID: 1543811208505931568}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac45391bb6e7ae1418c3d5ad6346cc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1435306453 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7546888962426865887, guid: 94b928cf60e34214ba5502e9ed5d3cfa, type: 3}
@@ -422,6 +437,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -50.953
       objectReference: {fileID: 0}
+    - target: {fileID: 7931535292422439119, guid: c7bc0dc7c9c6c914886231319fdbd3e1, type: 3}
+      propertyPath: ShootRange
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7bc0dc7c9c6c914886231319fdbd3e1, type: 3}
 --- !u!4 &2060397203 stripped
@@ -442,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6313541838137206926, guid: 5f0fffe0e31dd294ebdf562f6a75436e, type: 3}
       propertyPath: Weapons.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6313541838137206926, guid: 5f0fffe0e31dd294ebdf562f6a75436e, type: 3}
       propertyPath: Weapons.Array.data[2]
@@ -452,6 +471,10 @@ PrefabInstance:
       propertyPath: Weapons.Array.data[3]
       value: 
       objectReference: {fileID: 651969985}
+    - target: {fileID: 6313541838137206926, guid: 5f0fffe0e31dd294ebdf562f6a75436e, type: 3}
+      propertyPath: Weapons.Array.data[4]
+      value: 
+      objectReference: {fileID: 1429825200}
     - target: {fileID: 8317425739969800097, guid: 5f0fffe0e31dd294ebdf562f6a75436e, type: 3}
       propertyPath: m_Name
       value: Player
