@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac45391bb6e7ae1418c3d5ad6346cc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPrefab: {fileID: 9136310990155927669, guid: 0f9764574be108243bac52c3db5b2a8f, type: 3}
+  _bulletPrefab: {fileID: 9136310990155927669, guid: f5073bc9d31c9da4f9061ff22a3df044, type: 3}
   _spawnPoint: {fileID: 3233331153388308008}
   maxAmmo: 1
   currentAmmo: 0
