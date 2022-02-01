@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99390a385c932c445989d082871547dc, type: 3}
-  m_Name: RocketLauncher
+  m_Name: Pistol
   m_EditorClassIdentifier: 
-  weaponName: Rocket Launcher
-  maxAmmo: 2
-  reloadTime: 5
-  fireRate: 5
+  weaponName: Pistol
+  maxAmmo: 12
+  reloadTime: 2
+  fireRate: 0.5
   weaponSprite: {fileID: 3940801072762059636, guid: 9ab12bee90a08a0498c6a271e2204d0d, type: 3}
