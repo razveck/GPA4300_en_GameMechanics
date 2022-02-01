@@ -15,7 +15,7 @@ namespace GameMechanics
 
         private Vector3 direction;
 
-      
+        public float ShootRange;
 
         private void Start()
         {
@@ -26,10 +26,14 @@ namespace GameMechanics
 
         protected override void Update()
         {
-            if (chasingEnemy.playerInDetectionRange == true)
-                CurrentWeapon.Shoot();
-            else
+            float distance = Vector2.Distance(playerTarget.transform.position, transform.position);
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
+            if(hit.collider == null)
                 return;
+
+            if (hit.distance <= ShootRange)
+                CurrentWeapon.Shoot();
         }
 
         protected override Vector3 Aim()

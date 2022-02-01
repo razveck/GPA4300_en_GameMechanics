@@ -19,6 +19,12 @@ namespace GameMechanics {
 		[SerializeField] private float stoppingRange;
 		protected bool playerInStoppingRange = false;
 
+		private void Start() {
+			if(TryGetComponent(out EnemyAttack attack)){
+				attack.ShootRange = detectionRange;
+			}
+		}
+
 		// Update is called once per frame
 		private void Update() {
 			// Detection range
