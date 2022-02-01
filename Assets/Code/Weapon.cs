@@ -15,6 +15,13 @@ namespace GameMechanics {
 		[SerializeField]
 		private float _timeOfLastShot;
 
+
+		[SerializeField]
+		private int _bulletAmount = 1;
+
+		[SerializeField]
+		private float _angleDeviation = 0f;
+
 		public int maxAmmo = 10;
 		public int currentAmmo;
 		public float reloadTime = 1f;
@@ -34,7 +41,7 @@ namespace GameMechanics {
 				return;
 			}
 
-			if(Time.time - _timeOfLastShot < _shotDelay){
+			if(Time.time - _timeOfLastShot < _shotDelay) {
 				return;
 			}
 
@@ -44,9 +51,18 @@ namespace GameMechanics {
 
 			//Quaternions are rotations in the engine
 			//Euler angles (x, y,z in degrees)
-			GameObject bullet = Instantiate(_bulletPrefab, _spawnPoint.position, transform.rotation);
+			for(int i = 0; i < _bulletAmount; i++) {
+				//1) convert rotation to euler angles
+				Vector3 euler = transform.rotation.eulerAngles;
+				//2) change the rotation
+				euler.z += Random.Range(- _angleDeviation, _angleDeviation);
+				//3) convert the euler angles to a quaternion
+				Quaternion rotation = Quaternion.Euler(euler);
 
-			Destroy(bullet, 2f);
+				GameObject bullet = Instantiate(_bulletPrefab, _spawnPoint.position, Quaternion.Euler(euler));
+
+				Destroy(bullet, 2f);
+			}
 
 			if(currentAmmo <= 0) {
 				StartCoroutine(Reload());
