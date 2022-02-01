@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 9136310990155927669, guid: 0f9764574be108243bac52c3db5b2a8f, type: 3}
   _spawnPoint: {fileID: 3233331153388308008}
+  _shotDelay: 2
+  _timeOfLastShot: 0
   maxAmmo: 1
   currentAmmo: 0
   reloadTime: 2

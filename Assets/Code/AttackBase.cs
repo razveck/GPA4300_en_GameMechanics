@@ -2,46 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameMechanics
-{
-    public abstract class AttackBase : MonoBehaviour
-    {
-        [HideInInspector]
+namespace GameMechanics {
+	public abstract class AttackBase : MonoBehaviour {
 		public Weapon CurrentWeapon = default;
 
-		protected virtual void Update()
-        {
-            Aiming();
-        }
+		private void Update() {
+			Aim();
+			Shoot();
+		}
 
-        protected abstract Vector3 GetPlayerScreenPosition();
-        protected abstract Vector3 GetDirection();
-        protected abstract Vector3 GetRotation();
+		protected abstract Vector3 GetDirection();
+		protected abstract bool ShouldShoot();
 
 
-        protected void Aiming()
-        {
-            Vector3 playerScreenPosition = GetPlayerScreenPosition();
+		protected void Aim() {
+			Vector3 direction = GetDirection();
 
-            Vector3 direction = GetDirection();
+			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+			Vector3 rotation = transform.rotation.eulerAngles;
+			rotation.z = angle;
 
-            Vector3 rotation = GetRotation();
-            rotation.z = angle;
+			transform.rotation = Quaternion.Euler(rotation);
+		}
 
-            transform.rotation = Quaternion.Euler(rotation);
-
-            //if (Input.GetMouseButtonDown(0))
-            //{
-            //    if (CurrentWeapon.IsReloading)
-            //        return;
-
-            //    CurrentWeapon.Shoot();
-
-            //}
-        }
-    }
+		protected void Shoot() {
+			if(ShouldShoot())
+				CurrentWeapon.Shoot();
+		}
+	}
 }
-    
+
 

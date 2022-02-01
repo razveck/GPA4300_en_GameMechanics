@@ -10,6 +10,11 @@ namespace GameMechanics {
 		[SerializeField]
 		protected Transform _spawnPoint;
 
+		[SerializeField]
+		private float _shotDelay = 1f;
+		[SerializeField]
+		private float _timeOfLastShot;
+
 		public int maxAmmo = 10;
 		public int currentAmmo;
 		public float reloadTime = 1f;
@@ -21,10 +26,19 @@ namespace GameMechanics {
 		}
 
 		public void Shoot() {
+			if(IsReloading)
+				return;
+
 			if(currentAmmo <= 0) {
 				StartCoroutine(Reload());
 				return;
 			}
+
+			if(Time.time - _timeOfLastShot < _shotDelay){
+				return;
+			}
+
+			_timeOfLastShot = Time.time;
 
 			currentAmmo--;
 
