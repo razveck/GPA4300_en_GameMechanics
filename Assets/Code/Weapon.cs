@@ -20,7 +20,7 @@ namespace GameMechanics {
 			currentAmmo = maxAmmo;
 		}
 
-		public void Shoot() {
+		public virtual void Shoot() {
 			if(currentAmmo <= 0) {
 				StartCoroutine(Reload());
 				return;
@@ -39,7 +39,7 @@ namespace GameMechanics {
 			}
 		}
 
-		private IEnumerator Reload() {
+		protected IEnumerator Reload() {
 			IsReloading = true;
 
 
