@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 505867512442873598}
   - component: {fileID: 505867512442873599}
   - component: {fileID: -7134025639540486645}
+  - component: {fileID: 7512211882006465736}
   m_Layer: 0
   m_Name: Chaser
   m_TagString: Untagged
@@ -190,6 +191,20 @@ MonoBehaviour:
   CurrentWeapon: {fileID: 334043768403118480}
   playerTarget: {fileID: 0}
   ShootRange: 5
+--- !u!114 &7512211882006465736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505867512442873589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3607999fb45335542980b17133a4e9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _currentHealth: 100
 --- !u!1001 &3964172147167903108
 PrefabInstance:
   m_ObjectHideFlags: 0

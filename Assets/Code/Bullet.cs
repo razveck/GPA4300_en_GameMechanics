@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GameMechanics
-{
-    public class Bullet : MonoBehaviour
-    {
+namespace GameMechanics {
+	public class Bullet : MonoBehaviour {
 
-        private void OnTriggerEnter2D (Collider2D collider2D)
-        {
-            Debug.Log("Bullet hit something");
+		[SerializeField]
+		private int _damage = 10;
 
-            Destroy(gameObject);
-        }
-    }
+		private void OnTriggerEnter2D(Collider2D collider2D) {
+			if(collider2D.TryGetComponent(out HealthBase health)) {
+				health.TakeDamage(_damage);
+			}
+
+			Destroy(gameObject);
+		}
+	}
 }

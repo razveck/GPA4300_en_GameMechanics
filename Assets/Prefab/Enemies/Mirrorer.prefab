@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1496292596922644624}
   - component: {fileID: 1496292596922644629}
   - component: {fileID: 7931535292422439119}
+  - component: {fileID: 6751916808734572790}
   m_Layer: 0
   m_Name: Mirrorer
   m_TagString: Untagged
@@ -169,6 +170,20 @@ MonoBehaviour:
   CurrentWeapon: {fileID: 6379384047554614605}
   playerTarget: {fileID: 0}
   ShootRange: 5
+--- !u!114 &6751916808734572790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496292596922644623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3607999fb45335542980b17133a4e9ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 100
+  _currentHealth: 100
 --- !u!1001 &7721788131873136985
 PrefabInstance:
   m_ObjectHideFlags: 0
