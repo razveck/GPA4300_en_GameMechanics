@@ -6,10 +6,10 @@ namespace GameMechanics
 {
     public abstract class AttackBase : MonoBehaviour
     {
-        //[SerializeField]
-        //public Weapon CurrentWeapon = default;
+        [HideInInspector]
+		public Weapon CurrentWeapon = default;
 
-        protected virtual void Update()
+		protected virtual void Update()
         {
             Aiming();
         }
