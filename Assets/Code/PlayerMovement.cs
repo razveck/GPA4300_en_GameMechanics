@@ -11,6 +11,10 @@ namespace GameMechanics {
 			direction.x = Input.GetAxisRaw("Horizontal");
 			direction.y = Input.GetAxisRaw("Vertical");
 
+			if(direction == Vector2.zero)
+				_animator.SetBool("walking", false);
+			else
+				_animator.SetBool("walking", true);
 
 			return direction;
 		}

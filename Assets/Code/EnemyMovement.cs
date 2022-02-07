@@ -19,9 +19,12 @@ namespace GameMechanics {
 		protected override Vector2 GetDirection() {
 			foreach(MovementType type in _movementTypes){
 				if(type.CalculateMovement(out Vector2 direction)){
+					_animator.SetBool("walking", true);
 					return direction;
 				}
 			}
+
+			_animator.SetBool("walking", false);
 
 			return Vector2.zero;
 		}

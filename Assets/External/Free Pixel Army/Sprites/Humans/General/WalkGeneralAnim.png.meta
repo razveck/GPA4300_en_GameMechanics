@@ -140,7 +140,7 @@ TextureImporter:
       name: WalkGeneralAnim_0
       rect:
         serializedVersion: 2
-        x: 60
+        x: 59
         y: 70
         width: 120
         height: 180
@@ -210,6 +210,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      WalkGeneralAnim_3: -811943210
       WalkGeneralAnim_1: 4695632045283415284
       WalkGeneralAnim_0: -3709846438272184363
       WalkGeneralAnim_2: 5811713619212840949
