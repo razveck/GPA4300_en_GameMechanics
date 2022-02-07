@@ -4,46 +4,32 @@ using UnityEngine;
 
 namespace GameMechanics
 {
-    public class EnemyAttack : AttackBase
-    {
-        [SerializeField]
-        private Chaser chasingEnemy;
-        [SerializeField]
-        private PlayerAttack playerTarget;
+	public class EnemyAttack : AttackBase
+	{
+		[SerializeField]
+		private PlayerAttack playerTarget;
 
-        public Transform playerLocation;
+		public float ShootRange;
 
-        private Vector3 direction;
+		private void Start()
+		{
+			playerTarget = GameObject.FindObjectOfType<PlayerAttack>();
+		}
 
-        public float ShootRange;
+		protected override Vector3 GetDirection()
+		{
+			Vector3 direction = playerTarget.transform.position - transform.position;
 
-        private void Start()
-        {
-            
-            playerTarget = GameObject.FindObjectOfType<PlayerAttack>();
+			return direction;
+		}
 
-        }
+		protected override bool ShouldShoot()
+		{
+			RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
+			if (hit.collider != null && hit.distance <= ShootRange)
+				return true;
 
-        protected override void Update()
-        {
-            float distance = Vector2.Distance(playerTarget.transform.position, transform.position);
-
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
-            if(hit.collider == null)
-                return;
-
-            if (hit.distance <= ShootRange)
-                CurrentWeapon.Shoot();
-        }
-
-        protected override Vector3 Aim()
-        {
-            
-
-            return base.Aim();
-           
-        }
-
-
-    }
+			return false;
+		}
+	}
 }
