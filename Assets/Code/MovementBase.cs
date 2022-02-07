@@ -8,6 +8,9 @@ namespace GameMechanics {
 		[SerializeField]
 		private float _speed = 5f;
 
+		[SerializeField]
+		protected Animator _animator;
+
 		protected virtual void Update() {
 			Move();
 		}
@@ -15,7 +18,11 @@ namespace GameMechanics {
 		protected abstract Vector2 GetDirection();
 
 		protected void Move() {
-			transform.position += (Vector3)GetDirection().normalized * _speed * Time.deltaTime;
+			//cache the direction
+			Vector3 direction = GetDirection().normalized;
+			transform.position += direction * _speed * Time.deltaTime;
+
+			
 		}
 	}
 }

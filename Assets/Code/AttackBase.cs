@@ -24,10 +24,10 @@ namespace GameMechanics
 
 			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-			Vector3 rotation = transform.rotation.eulerAngles;
+			Vector3 rotation = CurrentWeapon.transform.rotation.eulerAngles;
 			rotation.z = angle;
 
-			transform.rotation = Quaternion.Euler(rotation);
+			CurrentWeapon.transform.rotation = Quaternion.Euler(rotation);
 		}
 
 		protected void Shoot()
