@@ -8,30 +8,18 @@ using System.Threading.Tasks;
 using UnityEngine;
 
 namespace GameMechanics {
-	public class PlayerAttack : AttackBase {
-
-        protected override void Update()
+    public class PlayerAttack : AttackBase
+    {
+        protected override Vector3 GetDirection()
         {
-            Aim();
+            Vector3 direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (CurrentWeapon.IsReloading)
-                    return;
-
-                CurrentWeapon.Shoot();
-            }
+            return direction;
         }
 
+		protected override bool ShouldShoot() {
+			return Input.GetMouseButton(0);
+		}
 	}
 }
-        
 
-
-           
-
-            
-
-        
-
-       
