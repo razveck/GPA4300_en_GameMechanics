@@ -4,28 +4,36 @@ using UnityEngine;
 
 namespace GameMechanics
 {
-    public abstract class AttackBase : MonoBehaviour
-    {
-        [SerializeField]
-        public Weapon CurrentWeapon;
+	public abstract class AttackBase : MonoBehaviour
+	{
+		public Weapon CurrentWeapon = default;
 
-        protected abstract void Update();
-        
-        protected virtual Vector3 Aim()
-        {
+		private void Update()
+		{
+			Aim();
+			Shoot();
+		}
 
-            Vector3 playerScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
+		protected abstract Vector3 GetDirection();
+		protected abstract bool ShouldShoot();
 
-            Vector3 direction = Input.mousePosition - playerScreenPosition;
 
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+		protected void Aim()
+		{
+			Vector3 direction = GetDirection();
 
-            Vector3 rotation = transform.rotation.eulerAngles;
-            rotation.z = angle;
+			float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-            transform.rotation = Quaternion.Euler(rotation);
+			Vector3 rotation = transform.rotation.eulerAngles;
+			rotation.z = angle;
 
-            return rotation;
-        }
-    }
-}   
+			transform.rotation = Quaternion.Euler(rotation);
+		}
+
+		protected void Shoot()
+		{
+			if (ShouldShoot())
+				CurrentWeapon.Shoot();
+		}
+	}
+}
